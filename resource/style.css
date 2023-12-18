@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.form-student {
+    width: 80%;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 25px auto;
+    padding: 10px;
+    background-color: rgba(212, 241, 244, 0.8);
+    border-radius: 5px;
+}
+
+.form-student h3 {
+    padding: 0;
+    margin-top: 0;
+    text-align:center;
+}
+.form-student label {
+    width: 100px;
+    float: left;
+    padding-left: 10px;
+}
+
+div.form-student input[type="text"] {
+    margin-bottom: 10px;
+    width: 70%;
+    padding: 5px;
+}
+button {
+    display: block;
+    margin: 15px auto;
+    background-color: rgba(13, 133, 125, 0.8);
+    border: 1px solid rgba(144, 234, 238, 0.6);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgba(86, 218, 225, 0.8);
+    
+}
+.student-list {
+    display: block;
+    margin: auto;
+    background-color: #ccc;
+    font-size: 12px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+ 
+  }
+  
+  tr:nth-child(even) {
+    /* background-color: #b2e1f3; */
+  }
+
+th {
+    background-color: rgb(110, 245, 238);
+    text-align: center;
+}
+td {
+    text-align: center;
+    background-color: rgb(175, 248, 244);
+}
+h4 {
+    margin: 10px
+}

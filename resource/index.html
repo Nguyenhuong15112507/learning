@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quan ly sinh vien</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div class="form-student">
+        <h3>Student's Information</h3>
+        <label for="">Name</label>
+        <input onchange="validateInput(this.value)" value="" type="text" id="fullname" placeholder="Name..."/>
+        <div class="errormessage"></div>
+        <br/>
+        
+        <label for="">Email</label>
+        <input type="text" id="email" placeholder="Email..."/>
+        <div class="errormessage"></div>
+        <br/>
+
+        <label for="">Phone number</label>
+        <input type="text" id="phoneNumber" placeholder="Phone number..."/>
+        <div class="errormessage"></div>
+        <br/>
+
+        <label for="">Address</label>
+        <input type="text" id="address" placeholder="Address..."/>
+        <div class="errormessage"></div>
+        <br/>
+    
+        <label for="">Gender</label>
+        <input type="radio" name="gender" id="gender" value="1"/> Male
+        <input type="radio" name="gender" id="gender" value="2"/> Female
+        <br/>
+        
+        <button onclick="appendStudent()">Save</button>
+        <h4>List information</h4>
+        <div class="student-list">
+            <table width="600" border="1" cellpadding="2px">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Female</td>
+                    <td>Alfreds Futterkiste@gmail.com</td>
+                    <td>09876543</td>
+                    <td>Germany</td>
+                  </tr>
+                 
+            </table>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>
