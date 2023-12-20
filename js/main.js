@@ -3,20 +3,21 @@ var fullname = document.getElementById("fullname")
 var email = document.getElementById("email")
 var phoneNumber = document.getElementById("phoneNumber")
 var address = document.getElementById("address")
-//var gender = document.querySelector('input[name="gender"]:checked').value;
+
 var id = 0;
-// function addStudent() {
-//     listStudent.push({
-//         fullname: fullname.value,
-//         gender: gender,
-//         email: email.value,
-//         phoneNumber: phoneNumber.value,
-//         address: address.value
-       
-//     })
-// }
 
 function appendStudent() {
+    //tien hanh validate
+    var errorMes = document.getElementById("errorMes")
+    var errorMesInput = document.getElementById("fullname")
+    
+    errorMes.style.display ="none"
+    errorMesInput.classList.remove("errorMesInput");
+    if(fullname.value==="") {
+      errorMesInput.classList.add("errorMesInput");
+      errorMes.style.display ="block"
+      return 
+    }
     var table = document.querySelector("table")
     var tr = document.createElement("tr")
 

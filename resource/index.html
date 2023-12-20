@@ -12,22 +12,30 @@
         <h3>Student's Information</h3>
         <label for="">Name</label>
         <input onchange="validateInput(this.value)" value="" type="text" id="fullname" placeholder="Name..."/>
-        <div class="errormessage"></div>
+        <div class="errormessage">
+            <p id="errorMes">Please enter fullname</p>
+        </div>
         <br/>
         
         <label for="">Email</label>
         <input type="text" id="email" placeholder="Email..."/>
-        <div class="errormessage"></div>
+        <div class="errormessage">
+            <p id="errorMes">Please enter fullname</p>
+        </div>
         <br/>
 
         <label for="">Phone number</label>
         <input type="text" id="phoneNumber" placeholder="Phone number..."/>
-        <div class="errormessage"></div>
+        <div class="errormessage">
+            <p>Please enter fullname</p>
+        </div>
         <br/>
 
         <label for="">Address</label>
         <input type="text" id="address" placeholder="Address..."/>
-        <div class="errormessage"></div>
+        <div class="errormessage">
+            <p>Please enter fullname</p>
+        </div>
         <br/>
     
         <label for="">Gender</label>
@@ -35,7 +43,7 @@
         <input type="radio" name="gender" id="gender" value="2"/> Female
         <br/>
         
-        <button onclick="appendStudent()">Save</button>
+        <button type="button" onclick="appendStudent()">Save</button>
         <h4>List information</h4>
         <div class="student-list">
             <table width="600" border="1" cellpadding="2px">
