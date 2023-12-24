@@ -3,20 +3,58 @@ var fullname = document.getElementById("fullname")
 var email = document.getElementById("email")
 var phoneNumber = document.getElementById("phoneNumber")
 var address = document.getElementById("address")
+var popupConfirm = document.getElementById("popupConfirm")
+var deletevalue = null
 
 var id = 0;
 
 function appendStudent() {
     //tien hanh validate
+    var isValidate = true
     var errorMes = document.getElementById("errorMes")
-    var errorMesInput = document.getElementById("fullname")
+    var errorMes1 = document.getElementById("errorMes1")
+    var errorMes2 = document.getElementById("errorMes2")
+    var errorMes3 = document.getElementById("errorMes3")
+    // var errorMesInput1 = document.getElementById("fullname")
+    // var errorMesInput1 = document.getElementById("fullname")
+    // var errorMesInput1 = document.getElementById("fullname")
+
     
     errorMes.style.display ="none"
-    errorMesInput.classList.remove("errorMesInput");
+    errorMes1.style.display ="none"
+    errorMes2.style.display ="none"
+    errorMes3.style.display ="none"
+    fullname.classList.remove("errorMesInput");
+    email.classList.remove("errorMesInput");
+    phoneNumber.classList.remove("errorMesInput");
+    address.classList.remove("errorMesInput");
+
     if(fullname.value==="") {
-      errorMesInput.classList.add("errorMesInput");
+      isValidate = false
+      fullname.classList.add("errorMesInput");
       errorMes.style.display ="block"
-      return 
+      //return 
+    }
+    if(email.value === "") {
+      isValidate = false
+      email.classList.add("errorMesInput")
+      errorMes1.style.display ="block"
+      //return 
+    }
+    if(phoneNumber.value === "") {
+      isValidate = false
+      phoneNumber.classList.add("errorMesInput")
+      errorMes2.style.display ="block"
+      //return 
+    }
+    if(address.value === "") {
+      isValidate = false
+      address.classList.add("errorMesInput")
+      errorMes3.style.display ="block"
+      //return 
+    }
+    if(isValidate === false) {
+      return
     }
     var table = document.querySelector("table")
     var tr = document.createElement("tr")
@@ -51,6 +89,29 @@ function appendStudent() {
     var td6 = document.createElement("td")
     td6.innerText = address.value
     tr.appendChild(td6)
+    //button edit
+    var td7 = document.createElement("td")
+    var elebtn = document.createElement("button")
+    elebtn.textContent = "Edit"
+    elebtn.classList.add("commonBtn")
+    elebtn.classList.add("button")
+    
+    td7.appendChild(elebtn)
+    tr.appendChild(td7)
+
+    //button delete
+    var td8 = document.createElement("td")
+    var elebtn1 = document.createElement("button")
+    elebtn1.textContent = "Delete"
+    elebtn1.classList.add("commonBtn")
+    elebtn1.classList.add("button")
+    elebtn1.onclick = function() {
+      deletevalue = this.parentNode.parentNode
+      popupConfirm.style.visibility = "visible"
+      
+    }
+    td8.appendChild(elebtn1)
+    tr.appendChild(td8)
 
     table.appendChild(tr)
     id++
@@ -86,4 +147,12 @@ function validateInput(value) {
   }
 
 }
+function closePopup() {
+  deletevalue = null
+  popupConfirm.style.visibility = "hidden"
 
+}
+function deleteRow() {
+  deletevalue.parentNode.removeChild(deletevalue)
+  closePopup()
+}

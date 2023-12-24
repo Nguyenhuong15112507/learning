@@ -8,33 +8,45 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
+    <header>
+        <div class="heading-block">
+            <h2>Student management</h2>
+        </div>
+        <nav>
+            <ul class="nav-block">
+                <li class="nav-block-item"><a href="#">Home</a></li>
+                <li class="nav-block-item"><a href="#">About</a></li>
+                <li class="nav-block-item"><a href="#">Topic</a></li>               
+            </ul>
+        </nav>
+    </header>
     <div class="form-student">
         <h3>Student's Information</h3>
         <label for="">Name</label>
-        <input onchange="validateInput(this.value)" value="" type="text" id="fullname" placeholder="Name..."/>
+        <input value="" type="text" id="fullname" placeholder="Name..."/>
         <div class="errormessage">
-            <p id="errorMes">Please enter fullname</p>
+            <p id="errorMes">Please enter value</p>
         </div>
         <br/>
         
         <label for="">Email</label>
         <input type="text" id="email" placeholder="Email..."/>
         <div class="errormessage">
-            <p id="errorMes">Please enter fullname</p>
+            <p id="errorMes1">Please enter value</p>
         </div>
         <br/>
 
         <label for="">Phone number</label>
         <input type="text" id="phoneNumber" placeholder="Phone number..."/>
         <div class="errormessage">
-            <p>Please enter fullname</p>
+            <p id="errorMes2">Please enter value</p>
         </div>
         <br/>
 
         <label for="">Address</label>
         <input type="text" id="address" placeholder="Address..."/>
         <div class="errormessage">
-            <p>Please enter fullname</p>
+            <p id="errorMes3">Please enter value</p>
         </div>
         <br/>
     
@@ -43,7 +55,7 @@
         <input type="radio" name="gender" id="gender" value="2"/> Female
         <br/>
         
-        <button type="button" onclick="appendStudent()">Save</button>
+        <button class="commonBtn" type="button" onclick="appendStudent()">Save</button>
         <h4>List information</h4>
         <div class="student-list">
             <table width="600" border="1" cellpadding="2px">
@@ -54,6 +66,8 @@
                     <th>Email</th>
                     <th>Phone Number</th>
                     <th>Address</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 <tr>
                     <td>123</td>
@@ -62,12 +76,33 @@
                     <td>Alfreds Futterkiste@gmail.com</td>
                     <td>09876543</td>
                     <td>Germany</td>
+                    <td><button class="button commonBtn" type="button">Edit</button></td>
+                    <td><button class="button commonBtn" type="button">Delete</button></td>
                   </tr>
                  
             </table>
         </div>
+        <div class="popupConfirm" id="popupConfirm">
+            <div class="popupContainer">
+                <div class="popupheader">
+                    <h3 class="confirmTitle">Confirm</h3>
+                    <button class="cloceBtn" id="cloceBtn" onclick="closePopup()">X</button>
+                </div>
+                <div class="popupbody">
+                    <p>Do you want to delete this data?</p>
+                </div>
+                <div class="popupfooter">
+                    <button class="yesBtn" onclick="deleteRow()">Yes</button>
+                    <button class="noBtn" id="noBtn" onclick="closePopup()">No</button>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-    
+    <footer>
+  	<span>© All rights reserved by dmmwebcampmedia.</span>
+  </footer>
     <script src="../js/main.js"></script>
 </body>
 </html>
